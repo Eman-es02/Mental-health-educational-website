@@ -1,0 +1,326 @@
+.navtop {
+    overflow: hidden;
+    background-color:  rgba(72,90,170,0.6);
+    border-radius: 10px;
+    font-family: "Candara", Arial, Serif;
+
+}
+
+.navtop a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navtop a:hover {
+    background-color:  rgba(72,90,170,0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+}
+
+.navtop a.active {
+    color: rgb(0, 0, 0);
+}
+
+li.section4 {
+    font-size: 25px;
+}
+
+dt.section4 {
+    color: #485aaa;
+}
+
+li.section5 {
+    font-size: 29px;
+}
+
+dt.section5 {
+    font-size: 29px;
+    color:#485aaa; 
+    font-weight: lighter;
+}
+
+
+.fisrtParallax {
+    background-image: url(webfinalpics/thewaterlilies_morningfinalv1.png);
+    border-radius: 5px;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EBEAEA;
+}
+
+.secondParallax {
+    background-image: url(webfinalpics/thewaterlilies_theclouds.png);
+    border-radius: 5px;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EBEAEA;
+}
+
+.thirdParallax {
+    background-image: url(webfinalpics/thewaterlilies_clearmorningwithwillows.png);
+    border-radius: 5px;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EBEAEA;
+}
+
+.fourthParallax {
+    background-image: url(webfinalpics/thewaterlilies_thetwowillows.png);
+    border-radius: 5px;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EBEAEA;
+}
+
+.fifthParallax {
+    background-image: url(webfinalpics/thewaterlilies_green_reflections.png);
+    border-radius: 5px;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EBEAEA;
+}
+
+.sixthParallax {
+    background-image: url(webfinalpics/thewaterlilies_tree_reflections.png);
+    border-radius: 5px;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #EBEAEA;
+}
+
+/* .top-left {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    font-size: 25px;
+    font-weight: 100px;
+    text-shadow: #b1efdf 20px 0 40px;
+    line-height: 1.18em;
+    background-color: rgba(108, 126, 120, 0.5);
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.secondtext {
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 45%;
+    font-size: 25px;
+    font-weight: 100px;
+    text-shadow: #b1efdf 20px 0 40px;
+    line-height: 1.18em;
+    background-color: rgba(178, 126, 120, 0.4);
+}
+
+h1 {
+    font-size: 45px;
+    font-family: "Sakkal Majalla", Serif;
+    padding-bottom: 0px;
+}
+
+a:link {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: dashed;
+}
+
+a:hover {
+    color: #488F95;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+a:visited {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #488F95;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+a:active {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+li {
+    font-size: 20px;
+    padding: 0px;
+}
+
+/* ul li {
+    display: inline;
+    margin: 0 5px;
+} */
+
+.float_center {
+    float: right;
+    position: relative;
+    left: -55%;
+    text-align: left;
+    width: 66%;
+}
+
+.float_center>.child {
+    position: relative;
+    left: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card {
+    background-color: none;
+    padding: 10px;
+    margin-top: 0%;
+    float: left;
+}
+
+button.expand {
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    background-color: #96A0B9;
+    color: #000000;
+    font-size: 20px;
+    padding: 8px;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+button.expand:after {
+    content: "\002B";
+    margin-left: 5px;
+    float: right;
+}
+
+button.expand:hover {
+    background-color: #717498;
+}
+
+button.expand.active {
+    background-color: #5E6182;
+    color: #000;
+    border-radius: 4px 4px 0 0;
+    margin: 4px 0 0;
+
+}
+
+button.expand.active:after {
+    content: "\2212";
+    margin-left: 5px;
+    float: right;
+}
+
+div.coll {
+    background-color: #CCB7BE;
+    color: #000;
+    font-size: 20px;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: 0.3s;
+    padding: 0 8px;
+    margin: 0;
+}
+
+div.coll.show {
+    opacity: 1;
+    max-height: 500px;
+    padding: 8px;
+    margin: 2px 0 4px;
+}
+
+dt {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+dd {
+    font-size: 25px;
+}
+
+th {
+    font-size: 23px;
+    padding: 10px;
+    background-color: rgba(58, 79, 177, 0.5);
+    border-radius: 10px;
+    border: 5px solid #EBEAEA;
+    border-collapse: collapse;
+
+}
+
+td {
+    font-size: 20px;
+    border-radius: 10px;
+    border: 5px solid #EBEAEA;
+    background-color: rgba(58, 109, 177, 0.1);
+    padding: 25px;
+    border-collapse: collapse;
+}
+
+a.start {
+    position: sticky;
+    bottom: 20px;
+    font-size: 15px;
+    --offset: 50px;
+    margin-top: calc(100vh + var(--offset));
+    text-decoration: none;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background: rgba(72,90,170,0.7);
+    border-radius: 100px;
+    white-space: nowrap;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}

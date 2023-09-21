@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Contact us</title>
+
+    <meta charset="utf-8">
+    <style>
+        body {
+            background: #EBEAEA;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .float_center {
+            float: right;
+            position: relative;
+            left: -50%;
+            text-align: left;
+            width: 30%;
+        }
+
+        .float_center>.child {
+            position: relative;
+            left: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .card {
+            padding: 10px;
+            margin-top: 20%;
+            float: left;
+            width: 110%;
+            max-width: 350px;
+            padding: 50px 45px 20px 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: "Candara", Arial, Serif;
+        }
+
+        .user-input {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .user-input label {
+            flex-basis: 28%;
+        }
+
+        .user-input input,
+        .user-input textarea {
+            flex-basis: 68%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #999;
+            color: #333;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ::placeholder {
+            font-size: 14px;
+        }
+
+        form button {
+            background: #717498;
+            color: #fff;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 10px 40px;
+            outline: 0;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 10px;
+        }
+
+        .user-input span {
+            position: absolute;
+            bottom: 12px;
+            right: 17px;
+            font-size: 13px;
+            color: red;
+        }
+
+        #error-submit {
+            color: red;
+        }
+
+        p {
+            text-align: center;
+            color: black;
+        }
+
+        .navtop {
+            overflow: hidden;
+            background-color: #96A0B9;
+            border-radius: 10px;
+            font-family: "Candara", Arial, Serif;
+
+        }
+
+        .navtop a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navtop a:hover {
+            background-color: #717498;
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            text-decoration: none;
+            transition-duration: 0.4s;
+        }
+
+        .navtop a.active {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+
+
+    <div class="navtop">
+        <a href="index.html">Home</a>
+        <a href="Contact_us.html" class="active">Contact us</a>
+        <a href="signup.html">Sign up / Login</a>
+    </div>
+
+
+    <div class="row">
+        <div class="float_center">
+            <div class="child">
+                <div class="card">
+                    <form>
+                        <div class="user-input">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" id="name" onkeyup="namevalidation()">
+                            <span id="error-name"></span>
+                        </div>
+
+                        <div class="user-input">
+                            <label>Phone number</label>
+                            <input type="tel" placeholder="01x-xxx xxxx" id="phone" onkeyup="phonevalidation()">
+                            <span id="error-phone"></span>
+                        </div>
+
+                        <div class="user-input">
+                            <label>Email</label>
+                            <input type="email" placeholder="Enter your Email" id="email" onkeyup="emailvalidation()">
+                            <span id="error-email"></span>
+                        </div>
+
+                        <div class="user-input">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="Enter your message" id="message"
+                                onkeyup="messagevalidation()"></textarea>
+                            <span id="error-message"></span>
+                        </div>
+
+                        <button onclick="return formvalidation()">submit</button>
+                        <span id="error-submit"></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var errorname = document.getElementById('error-name');
+        var errorphone = document.getElementById('error-phone');
+        var erroremail = document.getElementById('error-email');
+        var errormessage = document.getElementById('error-message');
+        var errorsubmit = document.getElementById('error-submit');
+
+        function namevalidation() {
+            var name = document.getElementById('name').value;
+
+            if (name.length == 0) {
+                errorname.innerHTML = 'Name is required';
+                return false;
+            }
+
+            if (!name.match(/^[A-Za-z]/)) {
+                errorname.innerHTML = 'Enter valid name';
+                return false;
+            }
+
+            errorname.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+        function phonevalidation() {
+            var phone = document.getElementById('phone').value;
+
+            if (phone.length == 0) {
+                errorphone.innerHTML = 'Phone Number is required';
+                return false;
+            }
+
+            if (!phone.match(/^[0-9]/)) {
+                errorphone.innerHTML = 'Enter digits only';
+                return false;
+            }
+
+            if (phone.length !== 10 && phone.length !== 11) {
+                errorphone.innerHTML = 'Phone No. must be 10 or 11';
+                return false;
+            }
+
+            errorphone.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+        function emailvalidation() {
+            var email = document.getElementById('email').value;
+
+            if (email.length == 0) {
+                erroremail.innerHTML = 'Email address is required';
+                return false;
+            }
+
+            if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+                erroremail.innerHTML = 'Invalid Email';
+                return false;
+            }
+
+            erroremail.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+        function messagevalidation() {
+            var message = document.getElementById('message').value;
+
+            if (message.length == 0) {
+                errormessage.innerHTML = 'Message is required';
+                return false;
+            }
+
+            errormessage.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+        function formvalidation() {
+            if (!namevalidation() || !phonevalidation() || !emailvalidation() || !messagevalidation()) {
+                errorsubmit.style.display = 'block';
+                errorsubmit.innerHTML = 'Fill required fields to submit';
+                setTimeout(function () { errorsubmit.style.display = 'none'; }, 3000);
+                return false;
+            }
+            else {
+                alert('form submitted successfully');
+                return true;
+            }
+        }
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign up</title>
+
+    <meta charset="utf-8">
+    <style>
+        body {
+            background: #EBEAEA;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .float_center {
+            float: right;
+            position: relative;
+            left: -50%;
+            text-align: left;
+            width: 30%;
+        }
+
+        .float_center>.child {
+            position: relative;
+            left: 50%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .card {
+            padding: 10px;
+            margin-top: 20%;
+            float: left;
+            width: 110%;
+            max-width: 350px;
+            padding: 50px 45px 20px 20px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: "Candara", Arial, Serif;
+        }
+
+        .user-input {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin: 13px 0;
+            position: relative;
+        }
+
+        .user-input label {
+            flex-basis: 28%;
+        }
+
+        .user-input input {
+
+            border: 2px solid #f0f0f0;
+            border-radius: 4px;
+            display: block;
+            font-size: 12px;
+            padding: 10px;
+            width: 100%;
+            outline-color: #717498;
+
+        }
+
+        ::placeholder {
+            font-size: 14px;
+            color: grey;
+        }
+
+        form button {
+            background: #717498;
+            color: #fff;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 10px 40px;
+            outline: 0;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 10px;
+        }
+
+        .user-input span {
+            position: absolute;
+            bottom: 12px;
+            right: 17px;
+            font-size: 13px;
+            color: red;
+        }
+
+        #error-submit {
+            color: red;
+        }
+
+        p {
+            text-align: center;
+            color: black;
+        }
+
+        .navtop {
+            overflow: hidden;
+            background-color: #96A0B9;
+            border-radius: 10px;
+            font-family: "Candara", Arial, Serif;
+
+        }
+
+        .navtop a {
+            float: left;
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navtop a:hover {
+            background-color: #717498;;
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            text-decoration: none;
+            transition-duration: 0.4s;
+        }
+
+        .navtop a.active {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="navtop">
+        <a href="index.html" >Home</a>
+        <a href="Contact_us.html">Contact us</a>
+        <a href="signup.html" class="active">Sign up / Login</a>
+    </div>
+
+
+    <div class="row">
+        <div class="float_center">
+            <div class="child">
+                <div class="card">
+
+                    <form>
+                        <h1>Sign up</h1>
+                        <br>
+            
+                        <div class="user-input">
+                            <input type="text" placeholder="Username" id="name" onkeyup="namevalidation()">
+                            <span id="error-name"></span>
+                        </div>
+            
+                        <div class="user-input">
+                            <input type="email" placeholder="Email address" id="email" onkeyup="emailvalidation()">
+                            <span id="error-email"></span>
+                        </div>
+            
+                        <div class="user-input">
+                            <input type="password" placeholder="Password" id="password" onkeyup="passwordvalidation()">
+                            <span id="error-password"></span>
+                        </div>
+            
+                        <div class="user-input">
+                            <input type="password" placeholder="Confirm password" id="passwordv2" onkeyup="passwordv2validation()">
+                            <span id="error-passwordv2"></span>
+                        </div>
+            
+                        <button onclick="return formvalidation()">submit</button>
+                        <span id="error-submit"></span>
+            
+                        <p><a href="Log_in.html">Already have an account? / click to Login</a></p>
+                    </form>
+            
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var errorname = document.getElementById('error-name');
+        var erroremail = document.getElementById('error-email');
+        var errorpassword = document.getElementById('error-password');
+        var errorpasswordv2 = document.getElementById('error-passwordv2');
+        var errorsubmit = document.getElementById('error-submit');
+
+
+        function namevalidation() {
+            var name = document.getElementById('name').value;
+
+            if (name.length == 0) {
+                errorname.innerHTML = 'Name is required';
+                return false;
+            }
+
+            if (name.length < 5) {
+                errorname.innerHTML = 'minimum 5 characters';
+                return false;
+            }
+
+            if (name.length > 10) {
+                errorname.innerHTML = 'maximum 10 characters';
+                return false;
+            }
+
+            errorname.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+
+        function emailvalidation() {
+            var email = document.getElementById('email').value;
+
+            if (email.length == 0) {
+                erroremail.innerHTML = 'Email address is required';
+                return false;
+            }
+
+            if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+                erroremail.innerHTML = 'Invalid Email';
+                return false;
+            }
+
+            erroremail.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+
+
+        function passwordvalidation() {
+
+            var password = document.getElementById('password').value;
+            var passwordv2 = document.getElementById('passwordv2').value;
+
+            if (password.length == 0) {
+                errorpassword.innerHTML = 'Password is required';
+                return false;
+            }
+
+            if (password.length < 8) {
+                errorpassword.innerHTML = "Password must be 8 characters";
+                return false;
+            }
+
+            errorpassword.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+
+            if (password != passwordv2) {
+                errorpasswordv2.innerHTML = "Password does not match";
+                return false;
+            }
+
+            errorpasswordv2.innerHTML = "<span style='color: green;'>valid</span>";
+            return true;
+        }
+
+        function passwordv2validation() {
+            var passwordv2 = document.getElementById('passwordv2').value;
+
+            if (passwordv2.length == 0) {
+                errorpasswordv2.innerHTML = 'Password is required';
+                return false;
+            }
+
+            else {
+                errorpasswordv2.innerHTML = '';
+                return true
+            }
+        }
+
+
+
+        function formvalidation() {
+            if (!namevalidation() || !passwordvalidation() || !passwordv2validation() || !emailvalidation()) {
+                errorsubmit.style.display = 'block';
+                errorsubmit.innerHTML = 'Fill required fields correctly to submit';
+                setTimeout(function () { errorsubmit.style.display = 'none'; }, 3000);
+                return false;
+            }
+            else {
+                alert('Registration successful');
+                return true;
+            }
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
